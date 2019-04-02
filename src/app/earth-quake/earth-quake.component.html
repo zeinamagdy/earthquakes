@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <h1>Earthquakes today</h1>
+    <div class="col-md-8">
+      <div>
+        <table class="table table-striped table-dark">
+          <thead>
+            <tr>
+              <th scope="col">MAG</th>
+              <th scope="col">place</th>
+              <th scope="col">TIME</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let q of earthQuakes | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+              <td>{{q.mag | number: '1.2-2'}}</td>
+              <td>
+                <a class="place" routerLink="/detail/{{q.id}}" (click)="send(q)">
+                {{q.place}}</a>
+              </td>
+              <td>{{q.time | date:'medium'}}</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="paginator">
+          <ngb-pagination 
+            [collectionSize]="earthQuakeCount" 
+            [(page)]="page" 
+            [maxSize]="5" 
+            [rotate]="true"
+            [ellipses]="false" 
+            [boundaryLinks]="true">
+          </ngb-pagination>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

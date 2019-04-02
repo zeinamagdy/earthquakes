@@ -1,0 +1,39 @@
+<div class="container">
+    <div class=" row col-md-8 col-md-offset-2 details">
+        <div class="row col-md-offest-2 margin-top-15px">
+            <span class="title">{{earthQuake.title}}</span>
+        </div>
+        <div class="place">
+            <span class="col-md-2">
+                Place
+            </span>
+            <span>
+                {{earthQuake.place}}
+            </span>
+        </div>
+        <div>
+            <span class="col-md-2">Time</span>
+            {{earthQuake.time|date:'medium'}}
+        </div>
+        <div>
+            <span class="col-md-2">Magnitude</span> 
+            {{earthQuake.mag | number: '1.2-2'}}
+        </div>
+        <div>
+            <span class="col-md-2">Status</span> 
+            {{earthQuake.status}}
+        </div>
+        <div>
+            <span class="col-md-2">Reference</span>
+            <a href="{{earthQuake.url}}">{{earthQuake.url}}</a>
+        </div>
+        <div class="row map">
+            <agm-map [latitude]="earthQuake.lat" [longitude]="earthQuake.lng">
+                <agm-marker 
+                    [latitude]="earthQuake.lat" 
+                    [longitude]="earthQuake.lng">
+                </agm-marker>
+            </agm-map>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+.main-nav{
+    background-color: #31708f;
+}
+.link{
+    color: white;
+}
+nav>li>a:focus, .nav>li>a:hover {
+    text-decoration: none;
+    background-color: #d9edf7;
+    color: #286090;
+}
+.logo{
+    height: 35px;
+    margin-top: -7px;
+}

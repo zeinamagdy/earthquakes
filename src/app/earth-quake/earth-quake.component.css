@@ -1,0 +1,30 @@
+.place {
+    text-decoration: underline;
+}
+.paginator {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #ddd;
+    ;
+    color: white;
+    text-align: center;
+}
+agm-map {
+    height: 300px;
+}
+.main {
+    background-color: #F7F7F7;
+}
+.side{
+    border: 1px solid gray;
+    border-radius: 25px;
+    height: 80%;
+}
